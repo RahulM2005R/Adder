@@ -42,15 +42,45 @@ Carry = AB + ACin+BCin
 
 
 ## Program:
+### 1.Half Adder:
+```verilog
+module exp2a(A,B,S,C);
+input A,B;
+output S,C;
+xor(S,A,B);
+and(C,A,B);
+endmodule
+```
 
+### 2.Full Adder:
+```verilog
+module exp2b(A,B,C,S,CA);
+input A,B,C;
+output S,CA;
+wire bc,acout,bcout,about,baout;
+xor(bc,B,C);
+xor(S,A,bc);
+and(acout,A,C);
+and(about,A,B);
+and(bcout,B,C);
+or(baout,bcout,about);
+or(CA,acout,baout);
+endmodule
+```
 
 ## RTL Schematic:
-
+### 1.Half Adder:
+![image](https://github.com/RahulMR2005/Adder/assets/145525365/a3686d3f-31b4-4f2d-859d-a23db1c6246d)
+### 2.Full Adder:
+![image](https://github.com/RahulMR2005/Adder/assets/145525365/cc896ceb-f1bd-4410-9dcd-29451444c49e)
 
 
 
 ## Timing Diagram:
-
+### 1.Half Adder:
+![image](https://github.com/RahulMR2005/Adder/assets/145525365/55b6b12f-03e1-47c8-9265-5677bdc0348c)
+### 2.Full Adder:
+![image](https://github.com/RahulMR2005/Adder/assets/145525365/861fa3aa-c94c-4526-bfd4-e42a99e9c499)
 
 ## Result:
 Thus the half adder and full adder circuits are designed and implemented and the truth tables are verified.
